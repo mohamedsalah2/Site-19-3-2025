@@ -1,0 +1,201 @@
+﻿<%@ Master Language="VB" CodeFile="PostMaster.master.vb" Inherits="PostMaster" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+     <link href="Content/css/bootstrap.min.css" rel="stylesheet" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+        <link href="StyleSheet.css" rel="stylesheet" type="text/css" />
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .style1
+        {
+            width: 100%;
+            font-family: "Times New Roman", Times, serif;
+            font-size: x-large;
+        }
+        .style4
+        {
+            width: 75%;
+        }
+        
+         .style5
+        {
+            width: 100%;
+            font-family: "Times New Roman", Times, serif;
+            font-size: 20px;
+        }
+        
+        .style6
+        {
+            width: 18%;
+        }
+        
+        .auto-style1 {
+            position: relative;
+            width: 100%;
+            top: 1px;
+            left: 1px;
+            height: 128px;
+        }
+        
+        .auto-style2 {
+            width: 158px;
+        }
+        
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server" defaultbutton="DailyAcc">
+    <div id="wrapper" style="background: url(images/bg.jpg) repeat-x">
+            <div class="HeaderDiv" style="width: 99%">
+                
+            <table class="style1">
+                <tr>
+                    <td class="style6" style="text-align: left">
+
+                        &nbsp;</td>
+                    <td class="style4" style="text-align: center" dir="rtl">
+
+                        <asp:Label ID="LblOfceName" runat="server" 
+                    
+                            style="font-size: large; font-weight: 800; text-align: center; font-family: 'Times New Roman'; text-decoration: underline; color: #000000;" 
+                            Text="مشروع اداره اعمال محور شئون المناطق" Font-Bold="True" Font-Italic="True" Font-Size="25pt" ForeColor="Red"></asp:Label>
+                           
+
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+         
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                    <asp:Label ID="LblUserName" runat="server" 
+                    
+                            style="font-size: large; font-weight: 800; text-align: left; font-family: 'Times New Roman'; text-decoration: underline; color: #000000;" 
+                            Text="Label"></asp:Label>
+
+                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                                     
+
+         
+
+                    &nbsp;</td>
+                    <td style="text-align: left">
+                        &nbsp;</td>
+                </tr>
+            </table>
+            
+
+            <div class="auto-style1">
+    <img alt="LOGO"  src="Images/Logo.gif" style="width: 99%; height: 129px; margin-right :auto; margin-left:auto" /><br/>
+                           
+</div>
+
+ 
+
+           
+          </div>
+          
+        <div style="direction: rtl; width: 95%; margin-left: auto; margin-right: auto" dir="rtl">
+            
+            <table class="style5" align="center">
+                <tr>
+                    <td>
+                        <asp:LinkButton ID="DailyAcc" runat="server" PostBackUrl="~/Inventory.aspx">موضوعات القطاع</asp:LinkButton>
+                    </td>
+                    <td class="auto-style2">
+                        <asp:LinkButton ID="RPT" runat="server" PostBackUrl="~/Reports.aspx">التقارير</asp:LinkButton>
+                    </td>
+                    <td class="auto-style2">
+                        <asp:LinkButton ID="DailyAcc0" runat="server" PostBackUrl="~/Files.aspx" Visible="False">ملفات القطاع</asp:LinkButton>
+                    </td>
+                    <td>
+                        <asp:LinkButton ID="RPT0" runat="server" PostBackUrl="~/OffceData.aspx" Visible="False">بيانات المكاتب</asp:LinkButton>
+                    </td>
+                    <td>
+                        <asp:LinkButton ID="Head_Sector" runat="server" PostBackUrl="~/Head_Sector.aspx" Visible="False">مرور رئيس القطاع</asp:LinkButton>
+                    </td>
+                    <td>
+                        &nbsp;</td>
+                    <td>
+                        &nbsp;</td>
+                    <td>
+                        <asp:LinkButton ID="ChngePW" runat="server" PostBackUrl="~/ChngePswrd.aspx">تغيير كلمة المرور</asp:LinkButton>
+                    </td>
+                    <td>
+                        <asp:LinkButton ID="Usrs" runat="server" PostBackUrl="~/USERS.aspx" 
+                            Enabled="False">إدارة المستخدمين</asp:LinkButton>
+                    </td>
+                    <td>
+                                           <script type="text/javascript">
+                                               function showSessionValues() {
+                                                   var userID = '<%= Session("UsrID") %>';
+                            var userName = '<%= Session("UsrName") %>';
+                            var password = '<%= Session("PWD") %>';
+                            var permission = '<%= Session("PRMTION") %>';
+                            var workArea = '<%= Session("Work_Area") %>';
+                            var ID = '<%= Session("ID") %>';
+
+                            alert("Session Values:\n" +
+                                  "User ID: " + userID + "\n" +
+                                  "User Name: " + userName + "\n" +
+                                  "Password: " + password + "\n" +
+                                  "Permission: " + permission + "\n" +
+                                  "Work Area: " + workArea + "\n" +
+                                  "ID: " + ID);
+                        }
+</script>
+
+<!-- Add a button to trigger the alert -->
+<asp:Button ID="btnShowSession" runat="server" Text="عرض الجلسات" OnClientClick="showSessionValues(); return false;" Visible="false" /></td>
+                    <td>
+                        &nbsp;</td>
+                    <td>
+                        <asp:LinkButton ID="LinkButton2" runat="server" PostBackUrl="~/LOGIN.aspx">خروج</asp:LinkButton>
+                    </td>
+                </tr>
+            </table>
+               
+        </div>
+        
+ 
+
+<asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+ 
+ 
+</asp:ContentPlaceHolder> 
+
+
+    </div>
+    <div class="FooterDiv" dir="rtl">
+        <br />
+        &nbsp; حقوق البرنامج محفوظة لـ محمد صلاح @ 2025<br />
+        <br />
+      </div>
+    </form>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function () {
+        // Apply Bootstrap classes to all textboxes
+        $("input[type='text'], input[type='password'], textarea").addClass("form-control");
+
+        // Apply Bootstrap classes to buttons
+        $("input[type='submit'], input[type='button'], button, .aspNet-Button").addClass("btn btn-primary");
+
+        // Apply classes to dropdown lists
+        $("select").addClass("form-select");
+
+        // Apply classes to validation messages
+        $(".aspNet-Validator").addClass("text-danger");
+
+        // Apply Bootstrap classes to GridView tables
+        $("table").addClass("table table-bordered table-striped");
+    });
+</script>
+
+</body>
+</html>
+
+

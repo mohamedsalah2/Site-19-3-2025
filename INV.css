@@ -1,0 +1,43 @@
+﻿body
+{
+    margin-top: 0;
+    margin-left: 0;
+    margin-right: 0;
+    text-align:center;
+    background-color: #DDDDDD;
+    margin-top: 7px;
+    direction:rtl
+}
+
+.HeaderDiv
+{
+    background-color: transparent;
+    color: White;
+    font-family: Times New Roman,Arial;
+    text-align: center;
+    margin-left: 4px;
+    margin-right: auto;
+	width: 1165px;
+}
+
+
+.PageBody
+{
+    background-color: #99ff99;
+    font-family: Times New Roman,Arial;
+    font-size: 14px;
+    direction: rtl;
+    width: 95%;
+    margin-right: auto;
+    margin-left:auto; 
+    padding-top:10px;
+}
+
+.GrdDiv
+{
+    width:19%;
+    float:left;
+     text-align:center;
+	height: 17px;
+	margin-right: 2px;
+}
